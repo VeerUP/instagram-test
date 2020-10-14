@@ -7,7 +7,9 @@ return [
             'dsn' => 'mysql:host=localhost;dbname=instagram',
             'username' => 'root',
             'password' => '',
-            'charset' => 'utf8',
+            'charset' => 'utf8mb4',
+            'enableSchemaCache' => true,
+            'schemaCacheDuration' => 3600,
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',

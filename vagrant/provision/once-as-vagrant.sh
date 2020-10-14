@@ -25,6 +25,15 @@ info "Apply migrations"
 ./yii migrate --interactive=0
 ./yii_test migrate --interactive=0
 
+info "Parse Instagram posts"
+./yii schedule/run --interactive=0
+
+info "Init Crontab"
+crontab -l > mycron
+echo "* * * * * /usr/bin/php /app/yii schedule/run --scheduleFile=@console/config/schedule.php 1>> /dev/null 2>&1" >> mycron
+crontab mycron
+rm mycron
+
 info "Create bash-alias 'app' for vagrant user"
 echo 'alias app="cd /app"' | tee /home/vagrant/.bash_aliases
 

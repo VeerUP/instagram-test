@@ -1,18 +1,24 @@
-<p align="center">
-    <h1 align="center">instagram.test</h1>
-</p>
+This project is based on the [Yii 2 Advanced Project Template](https://github.com/yiisoft/yii2-app-advanced).
 
-Запуск Vagrant
+DEVELOPMENT WITH VAGRANT 
+------------------------
+
+Install Vagrant and VirtualBox (Debian/Ubuntu):
+
 ```
-vagrant up
+# Skip vagrant-libvirt as it leads to dependency errors when installing Vagrant plugins.
+sudo apt-get install vagrant vagrant-libvirt-
+sudo apt-get install virtualbox
 ```
 
-Запуск тестов (выполняется из Vagrant)
+Run `vagrant up` and set your config according to displayed instructions (`github_token` and `job_search_path` in `vagrant/config/vagrant-local.yml`).
+
+Start tests (in Vagrant console)
 ```
 make test
 ```
 
-Проверка кода (выполняется из Vagrant)
+Start check code with phplint and php_codesniffer (in Vagrant console)
 ```
 make check
 ```

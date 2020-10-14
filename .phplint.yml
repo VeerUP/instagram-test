@@ -1,0 +1,11 @@
+path: ./
+jobs: 10
+cache: console/runtime/cache/.phplint.json
+extensions:
+  - php
+exclude:
+  - common/runtime
+  - console/runtime
+  - frontend/web/assets
+  - frontend/runtime
+  - vendor

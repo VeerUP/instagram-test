@@ -1,13 +1,18 @@
 <p align="center">
-    <h1 align="center">Instagram test</h1>
+    <h1 align="center">instagram.test</h1>
 </p>
 
-Запуск тестов
+Запуск Vagrant
+```
+vagrant up
+```
+
+Запуск тестов (выполняется из Vagrant)
 ```
 make test
 ```
 
-Проверка кода
+Проверка кода (выполняется из Vagrant)
 ```
 make check
 ```

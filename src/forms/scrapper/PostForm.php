@@ -3,6 +3,7 @@
 namespace src\forms\scrapper;
 
 use src\entities\Owner;
+use src\entities\Post;
 use yii\base\Model;
 
 class PostForm extends Model
@@ -10,27 +11,27 @@ class PostForm extends Model
     /**
      * @var int
      */
-    public int $id;
+    public $id;
     /**
      * @var int
      */
-    public int $ownerId;
+    public $ownerId;
     /**
      * @var int
      */
-    public int $createdAt;
+    public $createdAt;
     /**
      * @var string
      */
-    public string $image;
+    public $image;
     /**
      * @var string
      */
-    public string $caption;
+    public $caption;
     /**
      * @var string
      */
-    public string $url;
+    public $url;
 
     /**
      * {@inheritdoc}
@@ -42,9 +43,10 @@ class PostForm extends Model
             [['id', 'ownerId', 'createdAt'], 'integer'],
             [['caption'], 'string'],
             [['url'], 'string', 'max' => 255],
+            [['url'], 'url'],
             [['image'], 'string', 'max' => 512],
             [['caption'], 'default'],
-            [['id'], 'unique', 'targetClass' => Owner::class, 'targetAttribute' => ['id' => 'id']],
+            [['id'], 'unique', 'targetClass' => Post::class, 'targetAttribute' => ['id' => 'id']],
             [
                 ['ownerId'],
                 'exist',

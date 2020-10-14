@@ -46,7 +46,6 @@ class PostForm extends Model
             [['url'], 'url'],
             [['image'], 'string', 'max' => 512],
             [['caption'], 'default'],
-            [['id'], 'unique', 'targetClass' => Post::class, 'targetAttribute' => ['id' => 'id']],
             [
                 ['ownerId'],
                 'exist',

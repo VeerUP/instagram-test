@@ -19,6 +19,10 @@ class Owner extends ActiveRecord
 {
     public const INSTAGRAM_HOST = 'https://www.instagram.com';
 
+    /**
+     * @param $username
+     * @return Owner
+     */
     public static function create($username): Owner
     {
         $owner = new static();

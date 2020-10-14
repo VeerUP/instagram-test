@@ -8,7 +8,7 @@ class PostReadRepository
 {
     /**
      * @param $limit
-     * @return array
+     * @return Post[]
      */
     public function getLast($limit): array
     {

@@ -19,6 +19,15 @@ use yii\db\ActiveRecord;
  */
 class Post extends ActiveRecord
 {
+    /**
+     * @param $id
+     * @param $url
+     * @param $image
+     * @param $caption
+     * @param $ownerId
+     * @param $createdAt
+     * @return static
+     */
     public static function create($id, $url, $image, $caption, $ownerId, $createdAt): self
     {
         $post = new static();
@@ -31,6 +40,10 @@ class Post extends ActiveRecord
         return $post;
     }
 
+    /**
+     * @param $image
+     * @param $caption
+     */
     public function edit($image, $caption): void
     {
         $this->image = $image;

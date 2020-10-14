@@ -15,10 +15,10 @@ Run `vagrant up` and set your config according to displayed instructions (`githu
 
 Start tests (in Vagrant console)
 ```
-make test
+app && make test
 ```
 
 Start check code with phplint and php_codesniffer (in Vagrant console)
 ```
-make check
+app && make check
 ```

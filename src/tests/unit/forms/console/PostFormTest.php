@@ -1,9 +1,9 @@
 <?php
 
-namespace src\tests\unit\forms\scrapper;
+namespace src\tests\unit\forms\console;
 
 use Codeception\Test\Unit;
-use src\forms\scrapper\PostForm;
+use src\forms\console\PostForm;
 
 class PostFormTest extends Unit
 {

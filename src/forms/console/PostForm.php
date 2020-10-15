@@ -1,9 +1,8 @@
 <?php
 
-namespace src\forms\scrapper;
+namespace src\forms\console;
 
 use src\entities\Owner;
-use src\entities\Post;
 use yii\base\Model;
 
 class PostForm extends Model

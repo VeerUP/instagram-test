@@ -2,12 +2,13 @@
 
 namespace console\controllers;
 
-use src\readModels\OwnerReadRepository;
-use Yii;
 use InstagramScraper\Instagram;
-use src\forms\scrapper\PostForm;
-use src\useCases\parser\PostService;
+use src\forms\console\PostForm;
+use src\readModels\OwnerReadRepository;
+use src\useCases\console\PostService;
+use Yii;
 use yii\console\Controller;
+use yii\console\ExitCode;
 use yii\helpers\Console;
 
 class ScrapperController extends Controller
@@ -38,8 +39,9 @@ class ScrapperController extends Controller
 
     /**
      * Парсинг последних постов пользователей в Instagram
+     * @return int
      */
-    public function actionRun(): void
+    public function actionRun(): int
     {
         $instagram = new Instagram();
         $owners = $this->owner->getAll();
@@ -70,5 +72,6 @@ class ScrapperController extends Controller
         }
 
         $this->stdout('Done!' . PHP_EOL, Console::FG_GREEN, Console::BOLD);
+        return ExitCode::OK;
     }
 }

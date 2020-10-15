@@ -1,10 +1,9 @@
 <?php
 
-namespace src\useCases\parser;
+namespace src\useCases\console;
 
-use src\entities\Instagram;
 use src\entities\Post;
-use src\forms\scrapper\PostForm;
+use src\forms\console\PostForm;
 use src\repositories\PostRepository;
 
 class PostService
@@ -44,5 +43,15 @@ class PostService
 
         $this->posts->save($post);
         return $post;
+    }
+
+    /**
+     * @param int $limit
+     * @return int
+     * @throws \yii\db\Exception
+     */
+    public function removeOld(int $limit): int
+    {
+        return $this->posts->deleteAllWithoutLast($limit);
     }
 }

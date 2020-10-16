@@ -47,7 +47,7 @@ class PostRepository
     {
         $sql = 'DELETE FROM ' . Post::tableName() . ' WHERE id NOT IN (
             SELECT id FROM (
-                SELECT id FROM ' . Post::tableName() . ' ORDER BY [[created_at]] DESC LIMIT 10
+                SELECT id FROM ' . Post::tableName() . ' ORDER BY [[created_at]] DESC LIMIT :limit
             ) t
         )';
 
